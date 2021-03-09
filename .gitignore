@@ -4,6 +4,7 @@
 # User-specific stuff
 /.idea/
 .idea/
+target/
 
 
 # Generated files
