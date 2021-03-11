@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 
     private final WebDriver driver;
     private final By usernameField = By.cssSelector("#username");
@@ -12,6 +12,7 @@ public class LoginPage {
     private final By errorMessage = By.cssSelector("#flash");
 
     public LoginPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 
