@@ -3,18 +3,27 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage {
+public class HomePage extends BasePage {
 
     private final WebDriver driver;
-    private final By formAuthenticationLink = By.linkText("Form Authentication");
 
     public HomePage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 
     public LoginPage clickFormAuthenticationLink() {
-        driver.findElement(formAuthenticationLink).click();
+        clickLinkByText("Form Authentication");
         return new LoginPage(driver);
+    }
+
+    public DropdownPage clickDropdownLink() {
+        clickLinkByText("Dropdown");
+        return new DropdownPage(driver);
+    }
+
+    private void clickLinkByText(String linkText) {
+        clickElement(By.linkText(linkText));
     }
 
 }
