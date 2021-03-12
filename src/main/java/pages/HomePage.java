@@ -22,6 +22,11 @@ public class HomePage extends BasePage {
         return new DropdownPage(driver);
     }
 
+    public CheckboxesPage clickCheckboxesLink() {
+        clickLinkByText("Checkboxes");
+        return new CheckboxesPage(driver);
+    }
+
     private void clickLinkByText(String linkText) {
         clickElement(By.linkText(linkText));
     }
