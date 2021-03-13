@@ -27,6 +27,11 @@ public class HomePage extends BasePage {
         return new CheckboxesPage(driver);
     }
 
+    public HoversPage clickHoversLink() {
+        clickLinkByText("Hovers");
+        return new HoversPage(driver);
+    }
+
     private void clickLinkByText(String linkText) {
         clickElement(By.linkText(linkText));
     }
