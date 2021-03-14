@@ -42,6 +42,11 @@ public class HomePage extends BasePage {
         return new HorizontalSliderPage(driver);
     }
 
+    public JavaScriptAlertsPage clickJavascriptAlertsLink() {
+        clickLinkByText("JavaScript Alerts");
+        return new JavaScriptAlertsPage(driver);
+    }
+
     private void clickLinkByText(String linkText) {
         clickElement(By.linkText(linkText));
     }
