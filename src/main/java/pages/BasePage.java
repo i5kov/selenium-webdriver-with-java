@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,32 +13,36 @@ public class BasePage {
 
     private final WebDriver driver;
 
-    public BasePage(WebDriver driver) {
+    protected BasePage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public WebElement findElement(By selector) {
+    protected WebElement findElement(By selector) {
         return driver.findElement(selector);
     }
 
-    public List<WebElement> findElements(By selector) {
+    protected List<WebElement> findElements(By selector) {
         return driver.findElements(selector);
     }
 
-    public void clickElement(By selector) {
+    protected void clickElement(By selector) {
         findElement(selector).click();
     }
 
-    public void fillTextInField(By selector, String text) {
+    protected void fillTextInField(By selector, String text) {
         findElement(selector).sendKeys(text);
     }
 
-    public Select getDropdownElement(By selector) {
+    protected Select getDropdownElement(By selector) {
         return new Select(findElement(selector));
     }
 
-    public Actions actions() {
+    protected Actions actions() {
         return new Actions(driver);
+    }
+
+    protected Alert switchToAlertPopUp() {
+        return driver.switchTo().alert();
     }
 
 }
