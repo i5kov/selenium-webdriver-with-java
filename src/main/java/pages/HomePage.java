@@ -32,6 +32,16 @@ public class HomePage extends BasePage {
         return new HoversPage(driver);
     }
 
+    public KeyPressesPage clickKeyPressesLink() {
+        clickLinkByText("Key Presses");
+        return new KeyPressesPage(driver);
+    }
+
+    public HorizontalSliderPage clickHorizontalSliderLink() {
+        clickLinkByText("Horizontal Slider");
+        return new HorizontalSliderPage(driver);
+    }
+
     private void clickLinkByText(String linkText) {
         clickElement(By.linkText(linkText));
     }

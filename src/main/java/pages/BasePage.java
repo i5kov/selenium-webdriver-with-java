@@ -28,6 +28,10 @@ public class BasePage {
         findElement(selector).click();
     }
 
+    public void fillTextInField(By selector, String text) {
+        findElement(selector).sendKeys(text);
+    }
+
     public Select getDropdownElement(By selector) {
         return new Select(findElement(selector));
     }
