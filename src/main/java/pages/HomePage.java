@@ -32,6 +32,11 @@ public class HomePage extends BasePage {
         return new HoversPage(driver);
     }
 
+    public FileUploadPage clickFileUploadLink() {
+        clickLinkByText("File Upload");
+        return new FileUploadPage(driver);
+    }
+
     public KeyPressesPage clickKeyPressesLink() {
         clickLinkByText("Key Presses");
         return new KeyPressesPage(driver);
