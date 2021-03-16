@@ -27,6 +27,11 @@ public class HomePage extends BasePage {
         return new CheckboxesPage(driver);
     }
 
+    public FileUploadPage clickFileUploadLink() {
+        clickLinkByText("File Upload");
+        return new FileUploadPage(driver);
+    }
+
     private void clickLinkByText(String linkText) {
         clickElement(By.linkText(linkText));
     }
