@@ -27,9 +27,29 @@ public class HomePage extends BasePage {
         return new CheckboxesPage(driver);
     }
 
+    public HoversPage clickHoversLink() {
+        clickLinkByText("Hovers");
+        return new HoversPage(driver);
+    }
+
     public FileUploadPage clickFileUploadLink() {
         clickLinkByText("File Upload");
         return new FileUploadPage(driver);
+    }
+
+    public KeyPressesPage clickKeyPressesLink() {
+        clickLinkByText("Key Presses");
+        return new KeyPressesPage(driver);
+    }
+
+    public HorizontalSliderPage clickHorizontalSliderLink() {
+        clickLinkByText("Horizontal Slider");
+        return new HorizontalSliderPage(driver);
+    }
+
+    public JavaScriptAlertsPage clickJavascriptAlertsLink() {
+        clickLinkByText("JavaScript Alerts");
+        return new JavaScriptAlertsPage(driver);
     }
 
     private void clickLinkByText(String linkText) {
