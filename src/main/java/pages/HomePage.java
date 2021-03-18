@@ -52,6 +52,16 @@ public class HomePage extends BasePage {
         return new JavaScriptAlertsPage(driver);
     }
 
+    public EntryAdPage clickEntryAdLink() {
+        clickLinkByText("Entry Ad");
+        return new EntryAdPage(driver);
+    }
+
+    public ContextMenuPage clickContextMenuLink() {
+        clickLinkByText("Context Menu");
+        return new ContextMenuPage(driver);
+    }
+
     private void clickLinkByText(String linkText) {
         clickElement(By.linkText(linkText));
     }

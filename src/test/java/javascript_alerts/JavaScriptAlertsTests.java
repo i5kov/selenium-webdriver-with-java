@@ -15,7 +15,7 @@ public class JavaScriptAlertsTests extends BaseTest {
     public void testVerifyResultAfterClickingForJSAlertsButton() {
         JavaScriptAlertsPage javaScriptAlertsPage = homePage.clickJavascriptAlertsLink();
         javaScriptAlertsPage.clickForJSAlertButton();
-        assertEquals(javaScriptAlertsPage.getAlertText(), "I am a JS Alert", INCORRECT_ALERT_TEXT);
+        assertEquals(javaScriptAlertsPage.getTextFromAlert(), "I am a JS Alert", INCORRECT_ALERT_TEXT);
         javaScriptAlertsPage.alert_acceptAlert();
         String actualResult = javaScriptAlertsPage.getResult();
         assertEquals(actualResult, "You successfully clicked an alert", INCORRECT_RESULT_TEXT);
@@ -25,7 +25,7 @@ public class JavaScriptAlertsTests extends BaseTest {
     public void testVerifyResultAfterClickCancelButtonInConfirmPopUp() {
         JavaScriptAlertsPage javaScriptAlertsPage = homePage.clickJavascriptAlertsLink();
         javaScriptAlertsPage.clickForJSConfirmButton();
-        assertEquals(javaScriptAlertsPage.getAlertText(), "I am a JS Confirm", INCORRECT_ALERT_TEXT);
+        assertEquals(javaScriptAlertsPage.getTextFromAlert(), "I am a JS Confirm", INCORRECT_ALERT_TEXT);
         javaScriptAlertsPage.confirm_clickCancelButton();
         assertEquals(javaScriptAlertsPage.getResult(), "You clicked: Cancel", INCORRECT_RESULT_TEXT);
     }
@@ -35,7 +35,7 @@ public class JavaScriptAlertsTests extends BaseTest {
         String textForFill = "TEST 123";
         JavaScriptAlertsPage javaScriptAlertsPage = homePage.clickJavascriptAlertsLink();
         javaScriptAlertsPage.clickForJSPromptButton();
-        assertEquals(javaScriptAlertsPage.getAlertText(), "I am a JS prompt", INCORRECT_ALERT_TEXT);
+        assertEquals(javaScriptAlertsPage.getTextFromAlert(), "I am a JS prompt", INCORRECT_ALERT_TEXT);
         javaScriptAlertsPage.prompt_fillTextInPromptPopUp(textForFill);
         assertEquals(javaScriptAlertsPage.getResult(), "You entered: " + textForFill, INCORRECT_RESULT_TEXT);
     }

@@ -45,4 +45,8 @@ public class BasePage {
         return driver.switchTo().alert();
     }
 
+    protected String getAlertText() {
+        return switchToAlertPopUp().getText();
+    }
+
 }

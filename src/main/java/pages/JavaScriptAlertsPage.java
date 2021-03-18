@@ -37,8 +37,8 @@ public class JavaScriptAlertsPage extends BasePage {
         alert_acceptAlert();
     }
 
-    public String getAlertText() {
-        return switchToAlertPopUp().getText();
+    public String getTextFromAlert() {
+        return getAlertText();
     }
 
     public String getResult() {
