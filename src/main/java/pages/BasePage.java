@@ -45,6 +45,18 @@ public class BasePage {
         return driver.switchTo().alert();
     }
 
+    protected void switchToFrame(String frameId) {
+        driver.switchTo().frame(frameId);
+    }
+
+    protected void switchToParentFrame() {
+        driver.switchTo().parentFrame();
+    }
+
+    protected boolean isElementDisplayed(By selector) {
+        return findElement(selector).isDisplayed();
+    }
+
     protected String getAlertText() {
         return switchToAlertPopUp().getText();
     }

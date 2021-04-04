@@ -62,6 +62,11 @@ public class HomePage extends BasePage {
         return new ContextMenuPage(driver);
     }
 
+    public WysiwygEditorPage clickWysiwygEditorLink() {
+        clickLinkByText("WYSIWYG Editor");
+        return new WysiwygEditorPage(driver);
+    }
+
     private void clickLinkByText(String linkText) {
         clickElement(By.linkText(linkText));
     }
