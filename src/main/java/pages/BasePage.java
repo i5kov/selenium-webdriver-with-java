@@ -1,9 +1,6 @@
 package pages;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -11,6 +8,7 @@ import java.util.List;
 
 public class BasePage {
 
+    protected final By pageTitle = By.cssSelector("h3");
     private final WebDriver driver;
 
     protected BasePage(WebDriver driver) {
@@ -54,11 +52,19 @@ public class BasePage {
     }
 
     protected boolean isElementDisplayed(By selector) {
-        return findElement(selector).isDisplayed();
+        try {
+            findElement(selector).isDisplayed();
+            return true;
+        } catch (NoSuchElementException ex) {
+            return false;
+        }
     }
 
     protected String getAlertText() {
         return switchToAlertPopUp().getText();
     }
 
+    protected void clickLinkByText(String linkText) {
+        clickElement(By.linkText(linkText));
+    }
 }

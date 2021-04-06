@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage extends BasePage {
@@ -10,6 +9,16 @@ public class HomePage extends BasePage {
     public HomePage(WebDriver driver) {
         super(driver);
         this.driver = driver;
+    }
+
+    public ABTest clickABTestingLink() {
+        clickLinkByText("A/B Testing");
+        return new ABTest(driver);
+    }
+
+    public AddRemoveElementsPage clickAddRemoveElementsLink() {
+        clickLinkByText("Add/Remove Elements");
+        return new AddRemoveElementsPage(driver);
     }
 
     public LoginPage clickFormAuthenticationLink() {
@@ -66,9 +75,4 @@ public class HomePage extends BasePage {
         clickLinkByText("WYSIWYG Editor");
         return new WysiwygEditorPage(driver);
     }
-
-    private void clickLinkByText(String linkText) {
-        clickElement(By.linkText(linkText));
-    }
-
 }
