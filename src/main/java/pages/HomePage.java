@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage extends BasePage {
@@ -10,6 +9,16 @@ public class HomePage extends BasePage {
     public HomePage(WebDriver driver) {
         super(driver);
         this.driver = driver;
+    }
+
+    public ABTest clickABTestingLink() {
+        clickLinkByText("A/B Testing");
+        return new ABTest(driver);
+    }
+
+    public AddRemoveElementsPage clickAddRemoveElementsLink() {
+        clickLinkByText("Add/Remove Elements");
+        return new AddRemoveElementsPage(driver);
     }
 
     public LoginPage clickFormAuthenticationLink() {
@@ -32,6 +41,11 @@ public class HomePage extends BasePage {
         return new HoversPage(driver);
     }
 
+    public FileUploadPage clickFileUploadLink() {
+        clickLinkByText("File Upload");
+        return new FileUploadPage(driver);
+    }
+
     public KeyPressesPage clickKeyPressesLink() {
         clickLinkByText("Key Presses");
         return new KeyPressesPage(driver);
@@ -47,13 +61,21 @@ public class HomePage extends BasePage {
         return new JavaScriptAlertsPage(driver);
     }
 
+	public EntryAdPage clickEntryAdLink() {
+        clickLinkByText("Entry Ad");
+        return new EntryAdPage(driver);
+
     public DynamicLoadingPage clickDynamicLoadingLink() {
         clickLinkByText("Dynamic Loading");
         return new DynamicLoadingPage(driver);
     }
-
-    private void clickLinkByText(String linkText) {
-        clickElement(By.linkText(linkText));
+    public ContextMenuPage clickContextMenuLink() {
+        clickLinkByText("Context Menu");
+        return new ContextMenuPage(driver);
     }
 
+    public WysiwygEditorPage clickWysiwygEditorLink() {
+        clickLinkByText("WYSIWYG Editor");
+        return new WysiwygEditorPage(driver);
+    }
 }
