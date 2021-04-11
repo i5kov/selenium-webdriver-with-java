@@ -67,4 +67,8 @@ public class BasePage {
     protected void clickLinkByText(String linkText) {
         clickElement(By.linkText(linkText));
     }
+
+    protected String getTextFromElement(By locator) {
+        return findElement(locator).getText();
+    }
 }

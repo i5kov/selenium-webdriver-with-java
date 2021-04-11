@@ -19,7 +19,7 @@ public class EntryAdPage extends BasePage {
     }
 
     public String getModalTitle() {
-        return findElement(modalTitle).getText();
+        return getTextFromElement(modalTitle);
     }
 
     public void closeModal() {

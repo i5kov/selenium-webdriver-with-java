@@ -24,10 +24,10 @@ public class FileUploadPage extends BasePage {
     }
 
     public String getFileUploadedText() {
-        return findElement(fileUploadedText).getText();
+        return getTextFromElement(fileUploadedText);
     }
 
     public String getUploadedFileName() {
-        return findElement(uploadedFile).getText();
+        return getTextFromElement(uploadedFile);
     }
 }
