@@ -47,6 +47,11 @@ public class HomePage extends BasePage {
         return new JavaScriptAlertsPage(driver);
     }
 
+    public DynamicLoadingPage clickDynamicLoadingLink() {
+        clickLinkByText("Dynamic Loading");
+        return new DynamicLoadingPage(driver);
+    }
+
     private void clickLinkByText(String linkText) {
         clickElement(By.linkText(linkText));
     }
