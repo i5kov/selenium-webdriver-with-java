@@ -25,6 +25,6 @@ public class HorizontalSliderPage extends BasePage {
     }
 
     public String getSliderRangeResult() {
-        return findElement(sliderResult).getText();
+        return getTextFromElement(sliderResult);
     }
 }

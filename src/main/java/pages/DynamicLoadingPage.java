@@ -18,7 +18,7 @@ public class DynamicLoadingPage extends BasePage {
     }
 
     public void clickExampleLinkByNumber(int number) {
-        clickElement(By.xpath(String.format("//a[contains(@href, %s)]", ""+number)));
+        clickElement(By.xpath(String.format("//a[contains(@href, %s)]", "" + number)));
     }
 
     public void clickStartButton() {
@@ -27,7 +27,7 @@ public class DynamicLoadingPage extends BasePage {
     }
 
     public String getLoadedText() {
-        return findElement(loadedText).getText();
+        return getTextFromElement(loadedText);
     }
 
 }

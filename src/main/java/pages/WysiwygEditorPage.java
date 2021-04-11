@@ -51,7 +51,7 @@ public class WysiwygEditorPage extends BasePage {
 
     public String getText() {
         switchToFrame(frameId);
-        String text = findElement(textParagraph).getText();
+        String text = getTextFromElement(textParagraph);
         switchToParentFrame();
         return text;
     }

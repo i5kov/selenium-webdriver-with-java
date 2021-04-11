@@ -13,6 +13,6 @@ public class ABTest extends BasePage {
     }
 
     public String getPageTitleText() {
-        return findElement(pageTitle).getText();
+        return getTextFromElement(pageTitle);
     }
 }

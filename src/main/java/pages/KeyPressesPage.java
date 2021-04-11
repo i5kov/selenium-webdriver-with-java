@@ -17,7 +17,7 @@ public class KeyPressesPage extends BasePage {
     }
 
     public String getResultText() {
-        return findElement(result).getText();
+        return getTextFromElement(result);
     }
 
     public boolean isResultDisplayed() {

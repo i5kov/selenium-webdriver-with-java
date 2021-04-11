@@ -42,6 +42,6 @@ public class JavaScriptAlertsPage extends BasePage {
     }
 
     public String getResult() {
-        return findElement(result).getText();
+        return getTextFromElement(result);
     }
 }
