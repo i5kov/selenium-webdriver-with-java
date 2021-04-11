@@ -64,6 +64,7 @@ public class HomePage extends BasePage {
 	public EntryAdPage clickEntryAdLink() {
         clickLinkByText("Entry Ad");
         return new EntryAdPage(driver);
+    }
 
     public DynamicLoadingPage clickDynamicLoadingLink() {
         clickLinkByText("Dynamic Loading");
